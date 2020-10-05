@@ -36,10 +36,15 @@ headingLogo.addEventListener('mouseleave', (e) =>{
 const busImage = document.querySelector('header img');
 
 
-busImage.addEventListener('click', () =>{
+busImage.addEventListener('click', (e) =>{
     busImage.src = 'https://cdn.pixabay.com/photo/2017/08/05/12/47/auto-2583303_960_720.jpg';
     busImage.alt = 'bus on the rocks';
-   
+    e.stopPropagation(); 
+});
+
+busImage.addEventListener('click', (e) =>{
+    busImage.src = 'img/fun-bus.jpg'
+    e.stopPropagation();
 });
 
 //Double Click event
@@ -47,9 +52,10 @@ busImage.addEventListener('click', () =>{
 const header1 = document.querySelector('.intro');
 
 
-header1.addEventListener('dblclick', () =>{
+header1.addEventListener('dblclick', (e) =>{
     header1.style.backgroundColor ='seagreen';
     header1.style.color = 'white';
+    e.stopPropagation();
     
 });
 
@@ -77,3 +83,9 @@ window.addEventListener('scroll', (e) =>{
 
 
 //Prevent Default on Nav
+const navStop = document.querySelectorAll('.nav-link');
+
+navStop.addEventListener('click', (e) =>{
+    e.preventDefault();
+    e.stopPropagation();
+});
