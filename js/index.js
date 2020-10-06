@@ -42,7 +42,7 @@ busImage.addEventListener('click', (e) =>{
     e.stopPropagation(); 
 });
 
-busImage.addEventListener('click', (e) =>{
+busImage.addEventListener('dblclick', (e) =>{
     busImage.src = 'img/fun-bus.jpg'
     e.stopPropagation();
 });
